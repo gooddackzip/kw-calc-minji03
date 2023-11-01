@@ -1,7 +1,6 @@
 const lib = require("./lib");
 
-if(process.argv.length <= 3)
-{
+if (process.argv.length <= 3) {
     console.log("Insufficient parameter!");
     process.exit(1);
 }
@@ -9,17 +8,16 @@ if(process.argv.length <= 3)
 let command = process.argv[2];
 
 let numbers = process.argv
-.slice(3, process.argv.lenght)
-.map((n)=> parseFloat(n));
+    .slice(3, process.argv.length)
+    .map((n) => parseFloat(n));
 
-if(numbers.some((n)=> isNaN(n)))
-{
+if (numbers.some((n) => isNaN(n))) {
     console.log("Some arguments are not numbers!");
     process.exit(1);
 }
 
 let result;
-switch (command){
+switch (command) {
     case "avg":
         result = lib.avg(numbers);
         break;
@@ -27,7 +25,7 @@ switch (command){
         result = lib.prime(numbers[0]);
         break;
     case "fact":
-        result = lib.fact(numbers[0]);
+        result = lib.fact(numbers[0])
         break;
     default:
         console.log("Wrong command!");
