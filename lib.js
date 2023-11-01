@@ -4,45 +4,29 @@ function avg(numbers){
 }
 
 function prime(num){
-  // 2 이하의 숫자는 소수가 아닙니다.
-  if (num <= 1) {
-    return false;
-  }
-
-  // 2는 소수입니다.
-  if (num === 2) {
-    return true;
-  }
-
-  // 2를 제외한 모든 짝수는 소수가 아닙니다.
-  if (num % 2 === 0) {
-    return false;
-  }
-
-  // 3부터 제곱근 이하의 홀수로 나누어 떨어지면 소수가 아닙니다.
-  for (let i = 3; i <= Math.sqrt(num); i += 2) {
-    if (num % i === 0) {
-      return false;
+    if (num <= 1) {
+        return false;
     }
-  }
 
-  return true;
+    // 2부터 제곱근까지의 수로 나누어 떨어지는지 확인합니다.
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 function fact(num)
 {
-    if (num> 15) return -1;
-    else if (num === 0 || num === 1) {
-        return 1; // 0!과 1!은 항상 1입니다.
-      } else if (num < 0) {
+    if (num < 0 || num > 15) {
         return -1;
-      } else {
-        let result = 1;
-        for (let i = 2; i <= num; i++) {
-          result *= i;
-        }
-        return result;
-      }
+    } else if (num === 0 || num === 1) {
+        return 1;
+    } else {
+        return num * fact(num - 1);
+    }
 }
 
 module.exports = {
