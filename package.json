@@ -1,0 +1,14 @@
+{
+  "name": "kw-calc-minji03",
+  "version": "0.0.1",
+  "description": "kw-calc-minji03",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "bin": {
+    "calcbox": "./main.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
